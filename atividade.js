@@ -21,4 +21,4 @@ const work = prompt("Digite sua profissão: ")
 
 
 
-console.log(`Olá, ${name}! Você tem ${age} anos, mora em ${city}, seu email é ${email} e sua profissão é ${work}.`)
+console.log(`Olá, ${name}! tenho ${age} anos, moro em ${city}, seu email é ${email} e minha profissão é ${work}.`)
