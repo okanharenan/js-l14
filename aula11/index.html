@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white rounded-3xl shadow-xl w-[900px] h-[500px] flex overflow-hidden">
+
+        <!-- LADO ESQUERDO (LOGIN) -->
+        <div class="w-1/2 p-10 flex flex-col justify-center">
+
+            <h1 class="text-3xl font-bold text-gray-800 mt-10">
+                Bem-vindo de volta!
+            </h1>
+
+            <p class="text-gray-500 mb-6">
+                Faça login na sua conta
+            </p>
+
+            <!-- Email -->
+            <label class="text-sm text-gray-700 mb-1">Email</label>
+            <input type="email" placeholder="seuemail@exemplo.com"
+                class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <!-- Senha -->
+            <label class="text-sm text-gray-700 mb-1">Senha</label>
+            <input type="password" placeholder="********"
+                class="w-full p-3 mb-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <a href="#" class="text-sm text-blue-500 text-right mb-4">
+                Esqueceu sua senha?
+            </a>
+
+            <!-- Botão -->
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg mb-4">
+                Entrar
+            </button>
+
+            <div class="flex items-center mb-4">
+                <hr class="flex-1 border-gray-300">
+                <span class="px-2 text-gray-400 text-sm">ou</span>
+                <hr class="flex-1 border-gray-300">
+            </div>
+
+            <!-- Google -->
+            <button class="border py-2 rounded-lg mb-2 hover:bg-gray-100">
+                Entrar com Google
+            </button>
+
+            <!-- GitHub -->
+            <button class="border py-2 rounded-lg hover:bg-gray-100 mb-10">
+                Entrar com GitHub
+            </button>
+
+        </div>
+
+        <!-- LADO DIREITO (IMAGEM) -->
+        <div class="w-1/2 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/3212/3212608.png" alt="Foguete" class="w-72">
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
