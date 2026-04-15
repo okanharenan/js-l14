@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Lógica de Programação - JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exercícios de Lógica de Programação em JavaScript (1 a 14)</h1>
+    <div class="menu">
+        <button onclick="carregarExercicio('exercicio.js')">Ex 1: Sistema Compras</button>
+        <button onclick="carregarExercicio('exercicio2.js')">Ex 2: Pares/Ímpares</button>
+        <button onclick="carregarExercicio('exercicio3.js')">Ex 3: Inverter Frase</button>
+        <button onclick="carregarExercicio('exercicio4.js')">Ex 4: Array Máx/Duplic</button>
+        <button onclick="carregarExercicio('exercicio5.js')">Ex 5: Fatorial</button>
+        <button onclick="carregarExercicio('exercicio6.js')">Ex 6: Fibonacci</button>
+        <button onclick="carregarExercicio('exercicio7.js')">Ex 7: Primo</button>
+        <button onclick="carregarExercicio('exercicio8.js')">Ex 8: Soma/Média Array</button>
+        <button onclick="carregarExercicio('exercicio9.js')">Ex 9: Palíndromo</button>
+        <button onclick="carregarExercicio('exercicio10.js')">Ex 10: Média Notas</button>
+        <button onclick="carregarExercicio('exercicio11.js')">Ex 11: Triângulo Estrelas</button>
+        <button onclick="carregarExercicio('exercicio12.js')">Ex 12: Maior/Menor Array</button>
+        <button onclick="carregarExercicio('exercicio13.js')">Ex 13: Contar Vogais</button>
+        <button onclick="carregarExercicio('exercicio14.js')">Ex 14: Adivinhação</button>
+        <button onclick="limparOutput()">Limpar</button>
+    </div>
+    <div id="output"></div>
+
+    <script>
+        let scriptAtual = null;
+        function carregarExercicio(nomeArquivo) {
+            const output = document.getElementById('output');
+            output.innerHTML = `Carregando exercício ${nomeArquivo}...\n`;
+
+            if (scriptAtual) {
+                scriptAtual.remove();
+            }
+
+            scriptAtual = document.createElement('script');
+            scriptAtual.src = nomeArquivo;
+            scriptAtual.onload = () => {
+                output.innerHTML += `Exercício ${nomeArquivo} carregado! Abra o console (F12) para prompts e resultados.\nUse os prompts no navegador.`;
+            };
+            scriptAtual.onerror = () => {
+                output.innerHTML += `Erro ao carregar ${nomeArquivo}.`;
+            };
+            document.head.appendChild(scriptAtual);
+        }
+
+        function limparOutput() {
+            document.getElementById('output').innerHTML = '';
+            if (scriptAtual) {
+                scriptAtual.remove();
+                scriptAtual = null;
+            }
+        }
+    </script>
+</body>
+
+</html>
