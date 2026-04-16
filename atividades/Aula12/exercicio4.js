@@ -9,7 +9,7 @@ let alunosNotas = [
 
 for (let i = 0; i < alunosNotas.length; i++){
     let aluno = alunosNotas[i][0]
-    soma = 0
+    let soma = 0
     for(let j=1; j < alunosNotas[i].length; I++){
         soma += alunosNotas[i][j]
     }
