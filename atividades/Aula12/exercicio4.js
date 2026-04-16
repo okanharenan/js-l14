@@ -10,7 +10,7 @@ let alunosNotas = [
 for (let i = 0; i < alunosNotas.length; i++){
     let aluno = alunosNotas[i][0]
     let soma = 0
-    for(let j=1; j < alunosNotas[i].length; I++){
+    for(let j=1; j < alunosNotas[i].length; j++){
         soma += alunosNotas[i][j]
     }
     let media = soma / (alunosNotas[i].length - 1)
