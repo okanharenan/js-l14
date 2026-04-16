@@ -6,7 +6,7 @@ let alunosNotas = [
     ['ana', 7, 5, 7],
     ['joana', 6, 8, 10]
 ]
-//soma3Notas/3
+
 for (let i = 0; i < alunosNotas.length; i++){
     let aluno = alunosNotas[i][0]
     soma = 0
