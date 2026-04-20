@@ -21,4 +21,5 @@ for(let usuario of usuarios){
         usuario.senha = "123Mudar"
 
     }
+    console.log(usuario)
 }
