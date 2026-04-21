@@ -32,11 +32,8 @@ let alunos = [
 ]
 
 
-for(let propriedade in alunos){
-    if(propriedade === "1"){
-        console.log(`Aluno 2`, alunos[propriedade])
-    }
-    if(propriedade === "3"){
-        console.log(`Aluno 3:`, alunos[propriedade])
+for(let x in alunos){
+    if(x == 1 || x == 3){
+        console.log(`${x} - `, alunos[x])
     }
 }
