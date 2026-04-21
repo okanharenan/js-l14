@@ -34,6 +34,6 @@ let alunos = [
 
 for(let x in alunos){
     if(x == 1 || x == 3){
-        console.log(`${x} - `, alunos[x])
+        console.log(`${x}`, alunos[x])
     }
 }
