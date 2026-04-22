@@ -18,7 +18,7 @@ function divisao(a, b){
     if(b === 0){
         console.log("Erro: divisão por zero não é permitida")
     } else {
-        console.log(`A divisão de a + b é: ${a % b}`)
+        console.log(`A divisão de a + b é: ${a / b}`)
     }
 }
 
