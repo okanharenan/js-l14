@@ -22,7 +22,7 @@ function divisao(a, b){
     }
 }
 
-console.log(soma(10, 20))
-console.log(subtração(10,3))
-console.log(multi(30,2))
-console.log(divisao(10,2))
+soma(10,2)
+subtracao(10,3)
+multiplicacao(10,3)
+divisao(10,2)
