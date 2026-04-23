@@ -9,12 +9,12 @@
 // mostrarDados(aluno, callback)
 
 function calculaMedia(aluno){
-    let soma  = aluno.media.reduce((acc, nota) => acc + nota, 0)
+    let soma  = aluno.notas.reduce((acc, nota) => acc + nota, 0)
     return soma / aluno.notas.length
 }
 
 function calculaFalta(aluno){
-    return aluno.falta.reduce((acc, falta) => acc + falta, 0)
+    return aluno.faltas.reduce((acc, falta) => acc + falta, 0)
 }
 
 function mostraDados(aluno, resultado){
@@ -41,4 +41,8 @@ let alunos = [
 ]
 //execute as funções para o cleitinho (aluno[0]) e para o sandoval (aluno[1])
 
-mostraDados(alunos[0], calcularMedia)
+mostraDados(alunos[0], calculaMedia)
+mostraDados(alunos[0], calculaFalta)
+
+mostraDados(alunos[1], calculaMedia)
+mostraDados(alunos[1], calculaFalta)
