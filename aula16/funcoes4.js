@@ -42,7 +42,7 @@ let alunos = [
 //execute as funções para o cleitinho (aluno[0]) e para o sandoval (aluno[1])
 
 mostraDados(alunos[0], calculaMedia)
-mostraDados(alunos[0], calculaFalta)
-
 mostraDados(alunos[1], calculaMedia)
+
+mostraDados(alunos[0], calculaFalta)
 mostraDados(alunos[1], calculaFalta)
