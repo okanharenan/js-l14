@@ -9,5 +9,5 @@ let pessoas = [
 
 pessoas.forEach((item) =>{
     item.bonus = item.salario * 0.2
-    console.log(`Nome: ${item.nome}, Idade: ${item.ideade}, Cidade: ${item.cidade}, Salário: ${item.salario}, Bonus: ${item.bonus}`)
+    console.log(`Nome: ${item.nome}, Idade: ${item.idade}, Cidade: ${item.cidade}, Salário: ${item.salario}, Bonus: ${item.bonus}`)
 })
