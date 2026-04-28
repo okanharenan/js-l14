@@ -19,8 +19,9 @@ const candidatos = [
 
 let frontend = candidatos.filter(candidato => {
     return (
-        candidato.vaga === "Desenvolvedor Front-end" &&
-        (candidato.tecnologias.includes("JavaScript") || candidato.experiencia > 3) 
+        ( candidato.vaga === "Desenvolvedor Front-end" &&
+        candidato.tecnologias.includes("JavaScript")) ||
+        (candidato.vaga === "Desenvolvedor Front-end" && candidato.experiencia > 3)
     )
 })
 
