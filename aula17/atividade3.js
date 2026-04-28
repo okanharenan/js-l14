@@ -13,19 +13,19 @@ let produtos = [
 
 let novoArrayProduto = produtos.map((item) => {
     let produtoComDesconto;
-    if(item.etiqueta === "vermelha"){
-        produtoComDesconto = item.preco *0.2
+    if(item.etiqueta === "vermelho"){
+        produtoComDesconto = item.preco * 0.8
     }
-    if(item.etiqueta === "verde"){
-        produtoComDesconto = item.preco * 0.1
+    else if(item.etiqueta === "verde"){
+        produtoComDesconto = item.preco * 0.9
     }
-    if(item.etiqueta === "amarelo"){
+    else if(item.etiqueta === "amarelo"){
         produtoComDesconto = item.preco * 0.95
     }
 
     return {
         nome : item.nome,
-        preco : item.preco
+        preco : produtoComDesconto
     }
 })
 
