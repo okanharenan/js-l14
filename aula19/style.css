@@ -155,10 +155,31 @@ button {
     margin: 10px;
     border: none;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 
 button:hover {
+    background-color: var(--cor-destaque-hover);
+}
+
+.offcanvas-body {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    margin: 10px auto;
+ 
+}
+
+.btn-primary{
+    background-color: var(--cor-destaque);
+    border: none;
+    color: var(--cor-texto);
+    padding: 10px 20px;
+    border-radius: 10px;
+  
+}
+
+.btn-primary:hover {
     background-color: var(--cor-destaque-hover);
 }

@@ -54,6 +54,34 @@ let carAcomp = document.querySelector("#sessaoAcompanhamentos")
 let carBebida = document.querySelector("#sessaoBebidas")
 let carrinho = []
 
+
+//modal de decisão
+let modalDecisao1 = document.getElementById("modalDecisao")
+let modalDecisao = new bootstrap.Modal(modalDecisao1)
+
+let btnCarrinho = document.getElementById("btnIrCarrinho")
+let btnContinuar = document.getElementById("btnContinuarComprando")
+
+//offcanvas carrinho 
+let offCanvasElementos = document.getElementById("offcanvasScrolling") 
+let offcanvasCarrinho = new bootstrap.Offcanvas(offCanvasElementos)
+
+let btnAbrirCarrinho = document.getElementById("modalProdutoAdicionado")
+
+btnAbrirCarrinho.addEventListener("click", () => {
+    offcanvasCarrinho.show()
+})
+
+btnCarrinho.addEventListener("click", () => {
+    modalDecisao.hide()
+    offcanvasCarrinho.show()
+})
+btnContinuar.addEventListener("click", () =>{
+    modalDecisao.hide()
+    
+})
+
+
 // Função para criar produtos
 function criarProduto(produto, container) {
     let boxProduto = document.createElement("div")
@@ -81,6 +109,8 @@ function criarProduto(produto, container) {
     boxProduto.querySelector(".boxTexto").appendChild(btn)
     container.appendChild(boxProduto)
 }
+
+
 //função para adicionar produtos ao carrinho
 function adicionarProdutoAoCarrinho(produto){
     let itemExiste = carrinho.find(item => item.nome === produto.nome)
@@ -95,10 +125,6 @@ function adicionarProdutoAoCarrinho(produto){
 
 //função para mostrar detalhes do produto adicionado ao carrinho
 function mostrarDetalhesProdutoAdicionado(){
-
-    let modal = new bootstrap.Modal(
-    document.getElementById('modalProdutoAdicionado')
-    )
 
     let lista = ""
     let totalCarrinho = 0
@@ -117,8 +143,11 @@ function mostrarDetalhesProdutoAdicionado(){
 
         document.getElementById('modalTotalCarrinho').textContent =
         `Total do Carrinho: R$ ${totalCarrinho.toFixed(2)}`
+       
 
-    modal.show()
+    
+    modalDecisao.show()
+    
 }
 
 
