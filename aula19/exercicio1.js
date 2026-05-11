@@ -68,16 +68,38 @@ let offcanvasCarrinho = new bootstrap.Offcanvas(offCanvasElementos)
 
 let btnAbrirCarrinho = document.getElementById("modalProdutoAdicionado")
 
+ // pega o elemento do dom do botão limpar carrinho
+let limparCarrinhoBtn = document.getElementById("limparCarrinho")
+
+    
+
+
+limparCarrinhoBtn.addEventListener("click", limparCarrinho)
+
+
 btnAbrirCarrinho.addEventListener("click", () => {
-    offcanvasCarrinho.show()
+    if(carrinho.length > 0){
+        offcanvasCarrinho.show()
+    }else{
+        alert("O carrinho está vazio! Adicione produtos para visualizar o carrinho.")
+    }
+   
 })
 
 btnCarrinho.addEventListener("click", () => {
     modalDecisao.hide()
-    offcanvasCarrinho.show()
+    if(carrinho.length > 0){
+        offcanvasCarrinho.show()
+    }else{
+        alert("O carrinho está vazio! Adicione produtos para visualizar o carrinho.")
+    }
 })
 btnContinuar.addEventListener("click", () =>{
-    modalDecisao.hide()
+    if(carrinho.length > 0){
+        modalDecisao.hide()
+    }else{
+        alert("O carrinho está vazio! Adicione produtos para continuar comprando.")
+    }
     
 })
 
@@ -133,21 +155,136 @@ function mostrarDetalhesProdutoAdicionado(){
         let subtotal = item.preco * item.quantidade
         totalCarrinho += subtotal
 
-        lista += `
-            <p>${item.quantidade}x ${item.nome} - R$ ${subtotal.toFixed(2)}</p>
-        `
+lista += `
+    <div class="linha-carrinho">
+
+        <span>${item.nome}</span>
+
+        <span>R$ ${item.preco.toFixed(2)}</span>
+
+        <div class="controle-quantidade">
+
+            <button class="btn btn-danger diminuir" data-nome="${item.nome}">
+                -
+            </button>
+
+            <div class="quantidade-box">
+                ${item.quantidade}
+            </div>
+
+            <button class="btn btn-danger aumentar" data-nome="${item.nome}">
+                +
+            </button>
+
+        </div>
+
+        <button class="btn btn-danger remover" data-nome="${item.nome}">
+            X
+        </button>
+
+    </div>
+    `
 
         })
 
-        document.getElementById('modalProdutoNome').innerHTML = lista
+    document.getElementById('modalProdutoNome').innerHTML = lista
 
-        document.getElementById('modalTotalCarrinho').textContent =
-        `Total do Carrinho: R$ ${totalCarrinho.toFixed(2)}`
+    document.getElementById('modalTotalCarrinho').textContent =
+    `R$ ${totalCarrinho.toFixed(2)}`
+
+    adicionarEventosCarrinho()
+
        
 
+    if(carrinho.length > 0){
+        modalDecisao.show()
+    }else{
+        alert("O carrinho está vazio! Adicione produtos para visualizar o carrinho.")
+    }
     
-    modalDecisao.show()
     
+}
+
+function mostrarCarrinhoVazio(){
+    document.getElementById("modalProdutoNome").innerHTML =
+    "<p>Seu carrinho está vazio.</p>"
+
+    document.getElementById("modalTotalCarrinho").textContent =
+    "R$ 0,00"
+}
+
+function calcularTotalCarrinho(){
+    let total = 0
+
+    carrinho.forEach(item => {
+        total += item.preco * item.quantidade
+    })
+
+    return total
+}
+
+function adicionarEventosCarrinho() {
+    document.querySelectorAll(".aumentar").forEach(btn => {
+        btn.onclick = () => {
+            let nomeProduto = btn.dataset.nome;
+            acrescentarQuantidade(nomeProduto);
+        };
+    });
+
+    document.querySelectorAll(".diminuir").forEach(btn => {
+        btn.onclick = () => {
+            let nomeProduto = btn.dataset.nome;
+            diminuirQuantidade(nomeProduto);
+        };
+    });
+
+    document.querySelectorAll(".remover").forEach(btn => {
+        btn.onclick = () => {
+            let nomeProduto = btn.dataset.nome;
+            removerProduto(nomeProduto);
+            
+        };
+    });
+
+    document.getElementById("finalizarCompra").addEventListener("click", finalizarCompra)
+
+
+
+}
+
+function limparCarrinho(){
+    carrinho = []
+
+    offcanvasCarrinho.hide()
+    modalDecisao.hide()
+
+    mostrarCarrinhoVazio()
+}
+
+function finalizarCompra(){
+    alert("Compra finalizada! Total: R$ " + calcularTotalCarrinho().toFixed(2))
+    limparCarrinho()
+}
+
+function acrescentarQuantidade(nomeProduto){
+    let item = carrinho.find(item => item.nome === nomeProduto)
+    if(item){
+        item.quantidade ++
+        mostrarDetalhesProdutoAdicionado()
+    }
+}
+
+function diminuirQuantidade(nomeProduto){
+    let item = carrinho.find(item => item.nome === nomeProduto)
+    if (item && item.quantidade > 1){
+        item.quantidade -- 
+    }
+    mostrarDetalhesProdutoAdicionado()
+}
+
+function removerProduto(nomeProduto){
+    carrinho = carrinho.filter(item => item.nome !== nomeProduto)
+    mostrarDetalhesProdutoAdicionado()
 }
 
 
@@ -165,6 +302,8 @@ cardapio.acompanhamentos.forEach(acomp => {
 cardapio.bebidas.forEach(bebida => {
     criarProduto(bebida, carBebida)
 })
+
+
 
 
 //crie uma função adicionarProdutoAoCarrinho que recebe objeto produto como parâmetro e adiciona o produto ao carrinho

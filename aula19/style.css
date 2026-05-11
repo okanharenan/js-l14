@@ -68,7 +68,8 @@ header {
 
 @media screen and (max-width: 768px) {
     header {
-        padding: 15px;
+        margin: auto;
+        padding: 5px;
         width: 100%;
     }
 }
@@ -86,7 +87,7 @@ nav ul {
     align-items: center;
     justify-content: center;
     list-style: none;
-    gap: 20px;
+    gap:20px;
 }
 
 nav ul li a {
@@ -96,6 +97,23 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+    color: var(--cor-destaque);
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction:row;
+        padding: auto;
+        gap: 10px;
+    }
+}
+
+.aconra{
+    color: var(--cor-texto);
+    transition: 0.3s;
+}
+
+.ancora:hover {
     color: var(--cor-destaque);
 }
 
@@ -163,12 +181,24 @@ button:hover {
     background-color: var(--cor-destaque-hover);
 }
 
+.remover{
+    width: 50px;
+}
+
 .offcanvas-body {
     display: flex;
     justify-content: end;
     align-items: end;
     margin: 10px auto;
  
+}
+
+.diminuir{
+    width: 50px;
+}
+
+.aumentar{
+    width: 50px;
 }
 
 .btn-primary{
@@ -183,3 +213,115 @@ button:hover {
 .btn-primary:hover {
     background-color: var(--cor-destaque-hover);
 }
+
+.offcanvas{
+    display: flex;
+    flex-direction: ;
+    width: 700px !important;
+    background: #07111f;
+    color: white;
+    padding: 20px;
+}
+
+.offcanvas-body{
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+}
+
+.offcanvas-title{
+    font-size: 40px;
+    color: var(--cor-texto);
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow-y: auto;
+    gap: 20px;
+}
+
+.carrinho-header{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+    padding: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.linha-carrinho{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+.controle-quantidade{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controle-quantidade button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.quantidade-box{
+    width: 60px;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+}
+
+#limparCarrinho{
+    width: 300px;
+    font-size:15px;
+    font-weight: bold;
+}
+
+.box-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+
+.box-limpar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-finalizar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalTotalCarrinho{
+    padding: 15px 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#finalizarCompra{
+    width: 300px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+

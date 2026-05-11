@@ -3,99 +3,117 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <title>Cardápio Digital</title>
 
-    <title>Cardápio Digital - Live 13 </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <img class="logo" src="/aula19/imagens/logo.png" alt="Logo">
+        <img src="/aula19/imagens/logo.png" alt="Logo">
         <nav>
             <ul>
                 <li><a href="#burguer">Hamburgueres</a></li>
                 <li><a href="#acompanhamentos">Acompanhamentos</a></li>
                 <li><a href="#bebidas">Bebidas</a></li>
+                <li><a class="ancora" id="modalProdutoAdicionado">Carrinho</a></li>
             </ul>
         </nav>
     </header>
-
-
-    <h1>CARDÁPIO DIGITAL LIVE 13</h1>
 
     <section id="sessaoBurguer">
         <h2 id="burguer">HAMBURGUERES</h2>
     </section>
 
-
-
     <section id="sessaoAcompanhamentos">
-        <h2 id="acompanhamentos">ACOMPANHAMENTOS </h2>
+        <h2 id="acompanhamentos">ACOMPANHAMENTOS</h2>
     </section>
-
 
     <section id="sessaoBebidas">
         <h2 id="bebidas">BEBIDAS</h2>
     </section>
 
-    <!-- Offcanvas -->
-    <section id="offcanvas">
-        <button class="btn btn-primary" id="modalProdutoAdicionado" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check"
-                viewBox="0 0 16 16">
-                <path
-                    d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
-                <path
-                    d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-            </svg></button>
+    <!-- botão carrinho -->
 
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">produtos adicionados</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p id="modalProdutoNome"></p>
-                <p id="modalProdutoPreco"></p>
-                <p id="modalTotalCarrinho"></p>
-            </div>
+
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasScrolling">
+
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title">
+                Carrinho de compras
+            </h2>
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+            </button>
         </div>
-    </section>
 
-    <section>
-        <div class="modal fade" id="modalDecisao" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content text-center p-3">
+        <div class="modal-body">
 
-                    <h5>Produto adicionado ao carrinho!</h5>
-                    <p>O que deseja fazer?</p>
+            <div class="carrinho-header">
+                <span>Nome</span>
+                <span>Preço</span>
+                <span>Quantidade</span>
+                <span>Ações</span>
+            </div>
 
-                    <div class="d-flex justify-content-center gap-2">
-                        <button id="btnIrCarrinho" class="btn btn-success">
-                            Ir para o carrinho
-                        </button>
+            <div id="modalProdutoNome"></div>
 
-                        <button id="btnContinuarComprando" class="btn btn-secondary">
-                            Continuar comprando
-                        </button>
-                    </div>
+            <div class="box-limpar">
+                <button id="limparCarrinho" class="btn btn-danger">
+                    Limpar Carrinho
+                </button>
+            </div>
+
+            <div class="box-total">
+                <h3>Valor Total:</h3>
+                <span id="modalTotalCarrinho">R$ 0,00</span>
+            </div>
+
+            <div class="box-finalizar">
+                <button id="finalizarCompra" class="btn btn-success">
+                    Finalizar Compra
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal fade" id="modalDecisao" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content text-center p-4">
+
+                <h4>Produto adicionado!</h4>
+
+                <p>O que deseja fazer?</p>
+
+                <div class="d-flex gap-2 justify-content-center">
+
+                    <button id="btnIrCarrinho" class="btn btn-success">
+                        Ir para carrinho
+                    </button>
+
+                    <button id="btnContinuarComprando" class="btn btn-secondary">
+                        Continuar comprando
+                    </button>
 
                 </div>
+
             </div>
+
         </div>
-    </section>
 
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="exercicio1.js"></script>
+
 </body>
 
 </html>
