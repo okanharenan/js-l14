@@ -1,0 +1,2 @@
+//faça uma validação de CNPJ: https://brasilapi.com.br/docs#tag/CNPJ
+//consuma a api e mostre as informações do CNPJ inserido pelo usuário. Em caso de erro ou cnpj invalido, mostre uma mensagem de erro. Valide ser foram inseridos a quantidade de digitos corretos.
