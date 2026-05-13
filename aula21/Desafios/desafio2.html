@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="desafio2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Consulta de CNPJ</h1>
+
+        <div class="erro" id="erro"></div>
+
+        <div class="grupo">
+            <input type="text" id="cnpj" placeholder="Digite o CNPJ" maxlength="18">
+
+            <button id="buscar">
+                Buscar
+            </button>
+        </div>
+
+        <div class="resultado" id="resultado">
+
+            <p><strong>Razão Social:</strong> <span id="razao"></span></p>
+
+            <p><strong>Nome Fantasia:</strong> <span id="fantasia"></span></p>
+
+            <p><strong>Situação:</strong> <span id="situacao"></span></p>
+
+            <p><strong>Email:</strong> <span id="email"></span></p>
+
+            <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+
+            <p><strong>Cidade:</strong> <span id="cidade"></span></p>
+
+            <p><strong>UF:</strong> <span id="uf"></span></p>
+
+            <p><strong>CEP:</strong> <span id="cep"></span></p>
+
+        </div>
+
+    </div>
+    <script src="desafio2.js"></script>
+</body>
+
+</html>
