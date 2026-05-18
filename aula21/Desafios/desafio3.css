@@ -1,0 +1,8 @@
+.produto{
+    height: 100%;
+    transition: 0.3s;
+}
+
+.produto:hover{
+    transform: scale(1.03);
+}
