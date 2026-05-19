@@ -5,6 +5,7 @@ export default function InfoUsuarios(){
             <p>Nome: Renan</p>
             <p>Idade: 30</p>
             <p>Profissão: Engenheiro de Software</p>
+            <hr />
         </div>
     )
 }
