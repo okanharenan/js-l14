@@ -28,19 +28,31 @@ body {
   padding: 10px;
   margin: 10px;
   text-align: center;
+  transition: 0.3s;
 
   && img {
     width: 100%;
     height: auto;
+    border-radius: 5px;
   }
   && button{
     padding: 10px;
-    color: rgb(37, 190, 129);
+    border: none;
+    border-radius: 10px;
+    color: white;
     background-color: rgb(46, 98, 212);
+    transition: 0.3s;
   }
   && button:hover{
-    color: rgb(16, 241, 162);
+    
+    background-color: blue;
+    color: rgb(6, 247, 83);
   }
+
+ 
+}
+.product-cart:hover{
+  transform: scale(1.03);
 }
 
 .header {
@@ -59,11 +71,14 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+
 }
+
 
 .cart {
   width: 600px;
   border: 1px solid #ccc;
   border-radius: 10px;
   margin: 10px;
+
 }
