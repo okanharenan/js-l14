@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div style={{ display: "flex", gap: "20px" }}>
+    <div className='containerCards' style={{ display: "flex", gap: "20px" }}>
 
       <CardProdutos
         imagem="https://tse1.mm.bing.net/th/id/OIP.ROu46rV7pJSD5Lp37otg_QHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"

@@ -1,8 +1,58 @@
+/* App.css */
+
+.containerCards{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .cardProduto{
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  border-radius: 10px;
-  width: 300px;
-  margin: auto;
+    width: 300px;
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    transition: 0.3s;
+    
+}
+.cardProduto:hover{
+  transform: scale(1.05);
+}
+
+.cardProduto img{
+    width: 100%;
+    height: auto;
+}
+
+/* Tablets */
+@media (max-width: 768px){
+
+    .containerCards{
+        display: flex;
+        gap: 15px;
+    }
+
+    .cardProduto{
+        width: 45%;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px){
+
+    .cardProduto{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cardProduto h2{
+        font-size: 20px;
+    }
+
+    .cardProduto p{
+        font-size: 14px;
+    }
 }
