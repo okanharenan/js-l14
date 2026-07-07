@@ -1,0 +1,2 @@
+Olá, este é o conteúdo do primeiro arquivo.
+Este é o conteúdo do segundo arquivo.
