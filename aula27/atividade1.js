@@ -35,8 +35,7 @@ pessoasObj.forEach((pessoa) => {
     `ID: ${pessoa.id},
      Nome: ${pessoa.nome}, 
      Idade: ${pessoa.idade}, 
-     Email: ${pessoa.email}, 
-     Senha: ${pessoa.senha}, 
+     Email: ${pessoa.email},  
      Tipo de Usuário: ${pessoa.tipoUsuario}`,
   );
 });
