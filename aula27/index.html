@@ -4,10 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <title>consumindo api</title>
 </head>
 
 <body>
+    <form id="formPost">
+        <h1>Novo Post</h1>
+
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" placeholder="Digite o título" required>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" placeholder="Digite a mensagem" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script src="atividade4.js"></script>
     <script src="atividade3.js"></script>
 </body>
 

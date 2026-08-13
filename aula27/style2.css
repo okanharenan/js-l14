@@ -1,0 +1,31 @@
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+textarea {
+    padding: 10px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 150px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#resultado {
+    margin-top: 20px;
+}

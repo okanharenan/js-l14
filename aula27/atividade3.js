@@ -6,6 +6,7 @@ async function consumindoApi() {
     data.slice(0, 10).forEach((post) => {
 
       const div = document.createElement("div");
+      div.classList.add("post")
 
       const h1 = document.createElement("h1");
       h1.textContent = post.title;
@@ -15,7 +16,7 @@ async function consumindoApi() {
 
       div.appendChild(h1);
       div.appendChild(p);
-      
+
       document.body.appendChild(div);
     });
   } catch (error) {
