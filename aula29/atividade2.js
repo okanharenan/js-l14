@@ -19,13 +19,14 @@ class Biblioteca {
         quantidadeDeLivros = 0,
     ){
         this.livros = livros;
-        this.quantidadeDeLivros = quantidadeDeLivros;
+        this.quantidadeDeLivros = livros.length;
     }
 
     adicionarLivro(livro){
         if(livro instanceof Livro){
             this.livros.push(livro);
-            this.quantidadeDeLivros++;
+            this.quantidadeDeLivros = this.livros.length;
+            return console.log(`Livro ${livro.titulo} adicionado com sucesso!`);
         }else{
             console.log("O objeto passado não é uma instância da classe Livro.");
         }
